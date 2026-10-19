@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  bot:
+    build: .
+    container_name: telegramxuibot
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+      - ./.env:/app/.env:ro
+    env_file:
+      - .env
