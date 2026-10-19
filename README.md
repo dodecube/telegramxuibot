@@ -144,9 +144,19 @@ telegramxuibot/
 │   └── admins.py       # управление админами
 ├── requirements.txt
 ├── .env.example
+├── .dockerignore
 ├── Dockerfile
 └── docker-compose.yml
 ```
+
+### Зависимости
+
+Python 3.11+ и пакеты из `requirements.txt`:
+`aiogram 3.18`, `aiohttp 3.11`, `aiosqlite` (база админов), `python-dotenv`, `qrcode` + `pillow` (QR-коды), `aiofiles`.
+
+> ⚠️ Версии aiogram и aiohttp связаны между собой: aiogram < 3.16 требует `aiohttp < 3.11`.
+> Если поставить `aiogram==3.13.1` вместе с `aiohttp==3.11.*`, pip упадёт с `ResolutionImpossible`.
+> Не меняй версии по отдельности — либо обновляй обе, либо ставь как есть.
 
 ---
 
